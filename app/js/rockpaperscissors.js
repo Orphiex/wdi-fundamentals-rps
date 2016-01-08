@@ -42,23 +42,23 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     switch (playerMove) {
         case 'rock':
-            if (computerMove === 'rock') {
+            if (computerMove == 'rock') {
                 winner = 'tie';
-            } else if (computerMove === 'paper') {
+            } else if (computerMove == 'paper') {
                 winner = 'Computer';
             } else winner = 'Player';
             break;
         case 'paper':
-            if (computerMove === 'rock') {
+            if (computerMove == 'rock') {
                 winner = 'Player';
-            } else if (computerMove === 'paper') {
+            } else if (computerMove == 'paper') {
                 winner = 'tie';
             } else winner = 'Computer';
             break;
         case 'scissors':
-            if (computerMove === 'rock') {
+            if (computerMove == 'rock') {
                 winner = 'Computer';
-            } else if (computerMove === 'paper') {
+            } else if (computerMove == 'paper') {
                 winner = 'Player';
             } else winner = 'tie';
             break;
@@ -69,7 +69,9 @@ function getWinner(playerMove,computerMove) {
 }
 
 function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+    console.log("Let's play Rock, Paper, Scissors!");
+    console.log("The Player and the Computer will each choose one option.")
+    console.log("Paper beats Rock, Rock beats Scissors and Scissors beat Paper.")
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
@@ -88,12 +90,10 @@ function playToFive() {
             case 'Computer':
                 computerWins = computerWins + 1;
                 break;
-            default:
-
         }
         
         // display the winner
-        if (winner === 'Player') || (winner === 'Computer')) {
+        if ((winner === 'Player') || (winner === 'Computer')) {
             console.log('The winner is: ' + winner)
         } else if (winner === 'tie') {
             console.log('This match was a tie!')
